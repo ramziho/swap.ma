@@ -34,6 +34,9 @@ function login(){
 echo("logined");
 }
 
+function between(){
+return 0;}
+
 def loading(){
 	print("hello");
 }
