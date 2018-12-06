@@ -6,4 +6,7 @@ Wahya3!
 done4
 
 Wahya3!
+function show(){
 
+echo "done";
+}
