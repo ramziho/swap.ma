@@ -21,3 +21,6 @@ function show(){
 
 echo "done";
 }
+function exit(){
+die();
+}
