@@ -7,13 +7,17 @@ Wahya3!
 done4
 
 import os
+
 Def exite(){
-   #print("Hello World")
+   print("Existe")
    return os.system("clr");
 }
 
 Ayoub
 
+def load_data(){
+   print("Yellow");
+}
 
 Wahya3!
 
@@ -25,4 +29,8 @@ echo "done";
 }
 function exit(){
 die();
+}
+
+def loading(){
+	print("hello");
 }
