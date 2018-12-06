@@ -28,7 +28,10 @@ function show(){
 echo "done";
 }
 function exit(){
-die();
+die("dead");
+}
+function login(){
+echo("logined");
 }
 
 def loading(){
