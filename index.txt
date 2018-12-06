@@ -5,9 +5,11 @@ Wahya3!
 
 
 done4
-=======
+
+import os
 Def exite(){
-   print("Hello World")
+   #print("Hello World")
+   return os.system("clr");
 }
 
 Ayoub
