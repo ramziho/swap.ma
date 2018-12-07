@@ -49,5 +49,9 @@ function dbSecure( $string ){
 	$string = mysqli_real_escape_string( $string );
 	return $string;
 }
-
+function dbGetId(){
+	return mysqli_insert_id($conn);
+	
+	
+}
 ?>
