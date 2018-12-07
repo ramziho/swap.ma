@@ -25,7 +25,6 @@ $base='eventelo_swap';	//Nom de la base de données
 
 
 function dbGet($request){
-	
 	$re = mysqli_query($GLOBALS['connect'],$request);
 	$row = mysqli_fetch_array($re);
 	return $row[0];
