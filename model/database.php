@@ -20,20 +20,21 @@ $mdp_='hahaha123';	//Mot de passe (en local : aucun)
 $base='eventelo_pandastones';	//Nom de la base de données
 
 
-@$connect=mysql_connect($serveur, $user, $mdp_) or die ('Erreur : '.mysql_error());
-@mysql_select_db($base) or die ('Erreur : '.mysql_error());
+@$connect=mysqli_connect($serveur, $user, $mdp_) or die ('Erreur : '.mysqli_error());
+@mysqli_select_db($connect,$base) or die ('Erreur : '.mysqli_error());
 
 
 function dbGet($request){
-	$re = mysql_query($request);
-	$row = mysql_fetch_array($re);
+	
+	$re = mysqli_query($GLOBALS['connect'],$request);
+	$row = mysqli_fetch_array($re);
 	return $row;
 }
 
 function dbGets($request){
-	$re = mysql_query($request);
+	$re = mysqli_query($GLOBALS['connect'],$request);
 	$result = array();
-	while($data = mysql_fetch_array($re) ) {
+	while($data = mysqli_fetch_array($re) ) {
 	  array_push( $result , $data );
 	  // var_dump($data);
 	}
@@ -41,7 +42,7 @@ function dbGets($request){
 }
 
 function dbPost($request){
-	$re = mysql_query($request);
+	$re = mysqli_query($GLOBALS['connect'],$request);
 	return $re;
 }
 
