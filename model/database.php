@@ -46,7 +46,6 @@ function dbPost($request){
 }
 
 function dbSecure( $string ){
-	$string = mysql_real_escape_string( $string );
 	$string = mysqli_real_escape_string( $string );
 	return $string;
 }
