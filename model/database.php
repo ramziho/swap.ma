@@ -28,14 +28,9 @@ function dbGet($request){
 	
 	$re = mysqli_query($GLOBALS['connect'],$request);
 	$row = mysqli_fetch_array($re);
-	return $row;
-}
-function dbGetColumn($request){
-	
-	$re = mysqli_query($GLOBALS['connect'],$request);
-	$row = mysqli_fetch_array($re);
 	return $row[0];
 }
+
 function dbGets($request){
 	$re = mysqli_query($GLOBALS['connect'],$request);
 	$result = array();
