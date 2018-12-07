@@ -17,7 +17,7 @@
 $serveur='212.1.210.220';	//Nom du serveur (en local : locahost)
 $user='eventelo_user';	//Nom de l'utilisateur (en local : root)
 $mdp_='hahaha123';	//Mot de passe (en local : aucun)
-$base='eventelo_pandastones';	//Nom de la base de données
+$base='eventelo_swap';	//Nom de la base de données
 
 
 @$connect=mysqli_connect($serveur, $user, $mdp_) or die ('Erreur : '.mysqli_error());
