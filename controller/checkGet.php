@@ -1,12 +1,12 @@
 <?php
 	/*
-		- checkGetExist( ['name','pseudo'] )
+		- checkDictExist( ['name','pseudo'] )
 			o return true if the key exist in $_GET
 			
-		- checkGetExistAndEqualTo( ['name' => 'ayoub' , 'pseudo' => 'takashi'] )          
+		- checkDictExistAndEqualTo( ['name' => 'ayoub' , 'pseudo' => 'takashi'] )          
 			o return true if the keys exist in $_GET and $_GET['name'] == 'ayoub' and $_GET['pseudo'] == 'takashi'
 			
-		- checkGetExistAndNotNull( ['ayoub','marouan'] )
+		- checkDictExistAndNotNull( ['ayoub','marouan'] )
 			o return true if ayoub != null ( &ayoub=&marouan=  : False )
 	*/
 
@@ -21,7 +21,7 @@
 	}
 
 	
-	function _checkGetExistDict($dict,$listArray){
+	function _checkDictExistDict($dict,$listArray){
 
 		/* Compare Dict with key */
 		$cp = 0; $total = count($listArray);
@@ -34,8 +34,8 @@
 	}
 	
 
-	function checkGetExistAndEqualTo($dict,$listArray){
-		if(_checkGetExistDict($dict,$listArray)){
+	function checkDictExistAndEqualTo($dict,$listArray){
+		if(_checkDictExistDict($dict,$listArray)){
 			foreach($listArray as $item => $value){
 				if( is_array($item) ){
 					if( !in_array( $dict[$item] , $item ) ) return False;
@@ -49,8 +49,8 @@
 	}	
 
 	
-	function checkGetExistAndNotNull($dict,$listArray){
-		if(checkGetExist($dict,$listArray)){
+	function checkDictExistAndNotNull($dict,$listArray){
+		if(checkDictExist($dict,$listArray)){
 			foreach($listArray as $item){
 				if( $dict[$item] == null ){ return False; }
 			} return True;
