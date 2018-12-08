@@ -20,7 +20,9 @@
 			$modified=dbPost("update users set $champ='$value' where id=$id ");
 			return $modified;
 		}
-
+		static function checkMailUser($email){
+            return !(dbGet("select email from users where email='$email' ")==$email);
+        }
 	}
 
 ?>
