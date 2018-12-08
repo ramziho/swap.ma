@@ -58,7 +58,7 @@
 	}
 
 	function dbSecureDict( $dict , $dictParameter ){
-      	for( $parameter as $dictParameter ){
+      	for( $dictParameter as $parameter ){
           	$dict[ $parameter ] = dbSecure($dictParamter);
         }
     }
