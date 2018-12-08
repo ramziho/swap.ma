@@ -59,7 +59,7 @@
 
 	function dbSecureDict( $dict , $dictParameter ){
       	for( $parameter as $dictParameter ){
-          	$dict[ $parameter ] = $dictParamter;
+          	$dict[ $parameter ] = dbSecure($dictParamter);
         }
     }
 	function checkContraintEmail($email){
