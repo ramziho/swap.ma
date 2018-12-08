@@ -14,7 +14,6 @@
 		editColumn
 	*/
 	
-    <?
 
     class product{
         
@@ -51,6 +50,11 @@
            return dbGetId();
         }
       
+		static function getProductPhotos( $idProduct ){
+			$data = dbGets("SELECT * FROM photo WHERE id_product = $idProduct ");
+			return $data;
+		}
+	  
         static function addImages( $idProduct , $list_paths ){
             for($list_paths as $path)
             dbPost("INSERT INTO `image` (`id`, `image`, `id_product`) VALUES (NULL, '$idProduct ', '$path');");
