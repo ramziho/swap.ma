@@ -2,7 +2,7 @@
   
     class  category{
         
-  			static function getMainCategory(){
+  		static function getMainCategory(){
           	$data = dbGets("SELECT * from main_category");
           return $data;
         }
