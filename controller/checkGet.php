@@ -19,6 +19,7 @@
 		if($cp == $total){ return True; }
 		return False;
 	}
+	
 	function _checkGetExistDict($listArray){
 		/* Compare Dict with key */
 		$cp = 0; $total = count($listArray);
@@ -29,6 +30,7 @@
 		if($cp == $total){ return True; }
 		return False;
 	}
+	
 	function checkGetExistAndEqualTo($listArray){
 		if(_checkGetExistDict($listArray)){
 			foreach($listArray as $item => $value){
@@ -42,6 +44,7 @@
 			} return True;
 		} return False;
 	}	
+	
 	function checkGetExistAndNotNull($listArray){
 		if(checkGetExist($listArray)){
 			foreach($listArray as $item){
