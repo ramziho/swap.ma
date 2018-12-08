@@ -52,7 +52,6 @@
 		} return False;
 	}
 
-
 	function dbSecureDict( $dict , $dictParameter ){
       	for( $parameter as $dictParameter ){
           	$dict[ $parameter ] = $dictParamter;
