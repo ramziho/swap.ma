@@ -62,10 +62,13 @@
           	$dict[ $parameter ] = dbSecure($dictParamter);
         }
     }
+	
 	function checkContraintEmail($email){
 		return filter_var($email, FILTER_VALIDATE_EMAIL);
 	}
+	
 	function checkContraintLength($word,$length){
 		return strlen($word)>=$length;
 	}
+	
 ?>
