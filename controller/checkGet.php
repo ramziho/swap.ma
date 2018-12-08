@@ -10,9 +10,9 @@
 			o return true if ayoub != null ( &ayoub=&marouan=  : False )
 	*/
 
-	function checkGetExist($listArray){
+	function checkDictExist( $dict , $listArray ){
 		$cp = 0; $total = count($listArray);
-		foreach($_GET as $item => $value){
+		foreach($dict as $item => $value){
 			if( !in_array( $item , $listArray ) ){ continue; }
 			$cp += 1;
 		} 
@@ -20,10 +20,10 @@
 		return False;
 	}
 	
-	function _checkGetExistDict($listArray){
+	function _checkGetExistDict($dict,$listArray){
 		/* Compare Dict with key */
 		$cp = 0; $total = count($listArray);
-		foreach($_GET as $item => $value ){
+		foreach($dict as $item => $value ){
 			if( !array_key_exists( $item , $listArray ) ){ continue; }
 			$cp += 1;
 		} 
@@ -31,24 +31,25 @@
 		return False;
 	}
 	
-	function checkGetExistAndEqualTo($listArray){
-		if(_checkGetExistDict($listArray)){
+
+	function checkGetExistAndEqualTo($dict,$listArray){
+		if(_checkGetExistDict($dict,$listArray)){
 			foreach($listArray as $item => $value){
 				if( is_array($item) ){
-					if( !in_array( $_GET[$item] , $item ) ) return False;
+					if( !in_array( $dict[$item] , $item ) ) return False;
 				}
 				else{
-					if($_GET[$item] != $value)
+					if($dict[$item] != $value)
 					return False;
 				}
 			} return True;
 		} return False;
 	}	
 	
-	function checkGetExistAndNotNull($listArray){
-		if(checkGetExist($listArray)){
+	function checkGetExistAndNotNull($dict,$listArray){
+		if(checkGetExist($dict,$listArray)){
 			foreach($listArray as $item){
-				if( $_GET[$item] == null ){ return False; }
+				if( $dict[$item] == null ){ return False; }
 			} return True;
 		} return False;
 	}
