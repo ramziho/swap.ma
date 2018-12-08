@@ -1,4 +1,4 @@
 <?php
 include('model/database.php');
-print_r(dbGets('select * from users'));
+print_r(dbGet('select * from users'));
 ?>

@@ -19,8 +19,10 @@
 		if($cp == $total){ return True; }
 		return False;
 	}
+
 	
 	function _checkGetExistDict($dict,$listArray){
+
 		/* Compare Dict with key */
 		$cp = 0; $total = count($listArray);
 		foreach($dict as $item => $value ){
@@ -45,6 +47,7 @@
 			} return True;
 		} return False;
 	}	
+
 	
 	function checkGetExistAndNotNull($dict,$listArray){
 		if(checkGetExist($dict,$listArray)){
@@ -53,5 +56,11 @@
 			} return True;
 		} return False;
 	}
+
+	function dbSecureDict( $dict , $dictParameter ){
+      	for( $parameter as $dictParameter ){
+          	$dict[ $parameter ] = $dictParamter;
+        }
+    }
 
 ?>
