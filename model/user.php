@@ -17,7 +17,7 @@
 		}
 
 		static function editChamp($id , $champ , $value){
-			$modified=dbPost("update users set $champ='$value' where id=$id ");
+			$modified = dbPost("update users set $champ='$value' where id=$id ");
 			return $modified;
 		}
 		static function checkMailUser($email){
