@@ -10,7 +10,7 @@
           
             static function getProductComments( $idProduct ){
                 $data = dbGets("SELECT * FROM swap_comment as sp, user as us WHERE id_swap = $idSwap and type = 'comment' group by sp.id_user , us.id");
-                    return $data;
+                return $data;
             }
             
             
@@ -37,7 +37,7 @@
                 $data = dbPost("UPDATE swap SET status = 'deleted' WHERE id = $idSwap");
                 return $data;
             }
-   
+
     }
 
 ?>

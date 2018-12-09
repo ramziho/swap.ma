@@ -30,10 +30,10 @@
         }
         
         static function loadProductsBySearch($search ,$id_category=0){
-       $cat="";
-       if($id_category!=0)
-       $cat=" and id_category=$id_category ";
-        return dbGets("select * from product where title like '%$search%' or description like '%$search%' $cat order by post_date ");
+           $cat="";
+           if($id_category!=0)
+           $cat=" and id_category=$id_category ";
+            return dbGets("select * from product where title like '%$search%' or description like '%$search%' $cat order by post_date ");
         }
         
         static function loadProductsByNearMe( $long , $lat ){
@@ -50,10 +50,10 @@
            return dbGetId();
         }
       
-		static function getProductPhotos( $idProduct ){
-			$data = dbGets("SELECT * FROM photo WHERE id_product = $idProduct ");
-			return $data;
-		}
+        static function getProductPhotos( $idProduct ){
+          $data = dbGets("SELECT * FROM photo WHERE id_product = $idProduct ");
+          return $data;
+        }
 	  
         static function addImages( $idProduct , $list_paths ){
             for($list_paths as $path)
@@ -80,7 +80,15 @@
         static function editColumn( $id , $champ , $val ){
             return dbPost("update product set $champ='$val' where id = $id ");
         }
-        
+   			
+        static function getProductSwapAccepeted( $idProduct ){
+          return dbGet("select id from swap where id_product_swaped=$idProduct and status='accepted' ");
+        }
+                             
+        static function isAvailable( $idProduct ){
+          	return dbGet("SELECT status FROM product WHERE id = ") == 'swapAccepted'; 
+        }
+                             
     }
 
-?>
+?> 

@@ -31,7 +31,7 @@
          $data = dbGets("SELECT * FROM notification WHERE user_id = $idUser");
          return $data;
       }
-  
+		
 	}
 
 ?>
