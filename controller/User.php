@@ -11,7 +11,7 @@
         }
 
         function static setConnectedUser( $idUser ){
-            user:initSession();
+            user::initSession();
             $_SESSION['userId'] = $idUser; 
         }
 
