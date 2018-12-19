@@ -59,7 +59,8 @@
         
         static function addProduct($title,$description,$id_category,$value,$id_user,$id_ville,$long,$la,$list_photo){
             $added=dbPost("INSERT INTO `product` (`id`, `title`, `description`, `id_category`, `value`, `id_user`, `id_ville`, `longtitude`, `latitude`, `status`, `post_date`) VALUES (NULL, '$title', '$description', '$id_category', '$value', '$id_user', '$id_ville', '$long', '$la', 'pending', now())");     
-           return dbGetId();
+			if( $added ) return dbGetId();
+		    return false;
         }
       
         static function getProductPhotos( $idProduct ){
