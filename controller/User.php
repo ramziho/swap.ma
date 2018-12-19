@@ -5,23 +5,27 @@
         function static initSession(){ if( !isset(session_id) ) session_start();  }
 
         function static isConnected(){
-          user::initSession();
-          if( isset($_SESSION['userID']) ) return true;
+          User::initSession();
+          if( isset($_SESSION['UserID']) ) return true;
           return false;
         }
 
         function static setConnectedUser( $idUser ){
-            user::initSession();
-            $_SESSION['userId'] = $idUser; 
+            User::initSession();
+            $_SESSION['UserId'] = $idUser; 
         }
 
         function static logout(){
-            user::initSession();
+            User::initSession();
             session_destroy();
         }
+		
+		function static getUserID(){
+			return $_SESSION['UserId'];
+		}
 
         function static register() {
-          if( user::isConncted ) return array('response'=>'userIsAlreadyRegistred');
+          if( User::isConncted ) return array('response'=>'UserIsAlreadyRegistred');
           //check all fields are presented
           if( ! checkDictExistAndNotNull($_POST, ['first_name','last_name','email','password','tel' ] ) ) return array('response'=>'failed','message'=>'veuillez remplir tout les champs');
           // secure parameter
@@ -41,18 +45,18 @@
 
           //register done
           if (addUser( 'NULL', $_POST['email'] , $_POST['last_name'], $_POST['first_name'] , $_POST['password'] ,  '' , $_POST['tel']   , '1' )){
-          		user::setConnectedUser( dbGetLast() ); 
+          		User::setConnectedUser( dbGetLast() ); 
               return array('response'=>'success','message'=>"bien inscrit" );           
           }
         	
         }
 
       function static login(){
-        	if( user::isConncted ) return true;
+        	if( User::isConncted ) return true;
           dbSecureDict( $_POST , [ 'email' , 'password' ] );
           if( checkGetExistAndNotNull( [ 'email' , 'password'] ) ){
-              if( ! dbGet("SELECT * FROM users WHERE email = '$email' and password = '$password' ") ) return false;
-            	user::setConnectedUser( dbGetLast() );
+              if( ! dbGet("SELECT * FROM Users WHERE email = '$email' and password = '$password' ") ) return false;
+            	User::setConnectedUser( dbGetLast() );
               return true;
           } return false;
       }
