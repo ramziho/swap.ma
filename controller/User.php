@@ -29,7 +29,7 @@
           // check email format
           if(!checkContraintEmail($email))return array('response'=>'failed','message'=>"veuillez respecter format d'email" );
           // check length tel == 10 and not string
-          if(!strlen($_POST['tel']==10 or  !ctype_digit($_POST['tel'])) return array('response'=>'failed','message'=>"veuillez respecter format de telephone " );
+          if(!strlen($_POST['tel'])==10 or  !ctype_digit($_POST['tel']) or !substr( $$_POST['tel'], 0, 1) === "0") return array('response'=>'failed','message'=>"veuillez respecter format de telephone " );
           //check passord minim 6 chars
           if(!checkContraintLength($_POST['password'],6))return array('response'=>'failed','message'=>"minimum 6 caracters" );
           // check email existe

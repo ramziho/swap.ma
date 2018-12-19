@@ -70,5 +70,49 @@
 	function checkContraintLength($word,$length){
 		return strlen($word)>=$length;
 	}
+	function checkContraintInt($word){
+		
+		
+		return filter_var($word, FILTER_VALIDATE_INT);
+	}
+	
+	function checkContraintFloat($word){
+		
+
+		$floatVal = floatval($word);
+	
+		if($floatVal && intval($floatVal) != $floatVal)
+{
+    return true;
+}
+	return false;
+	}
+	function checkDictContraint($dict,$listArray){
+//  int , float , email , tel , 
+  if(checkDictExist($dict,$listArray)){
+			foreach($listArray as $item => $v){
+        if($v=='int'){
+          if(!checkContraintInt($item)
+             return false;
+             }
+          else if($v=='email'){
+            if(!checkContraintEmail($item))
+            return false
+          }
+             else if($v=='float'){
+            if(!checkContraintFloat($item))
+            return false
+          }
+             else if($v=='tel'){
+         if(!strlen($item)==10 or  !ctype_digit($item) or !substr( $item, 0, 1) === "0")
+             return false;
+             }
+        
+        
+   
+    
+             }}
+             return true;
+             }       
 	
 ?>

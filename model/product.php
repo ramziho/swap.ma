@@ -21,27 +21,39 @@
             return dbGet("SELECT * FROM product WHERE id = $id");
         }
         
-        static function loadProductsUser($idUser){ 
-            return dbGets( "SELECT * FROM product WHERE id_user = $idUser" );
+        static function loadProductsUser($idUser ,$index,$total){
+            return dbGets( "SELECT * FROM product WHERE id_user = $idUser limit $index , $total ");
         }
         
-        static function loadProductsByCategory( $cat ){
-            return dbGets("SELECT * FROM product WHERE id_category = $cat");
+        static function loadProductsByCategory( $cat ,$id_ville ,$index,$total){
+			$sql="and id_ville=$id_ville";
+			if($id_ville==-1)$sql="";
+			
+            return dbGets("SELECT * FROM product a WHERE id_category = $cat $sql limit $index , $total ");
         }
         
-        static function loadProductsBySearch($search ,$id_category=0){
+        static function loadProductsBySearch($search,$id_ville ,$index,$total ,$id_category=0){
            $cat="";
            if($id_category!=0)
            $cat=" and id_category=$id_category ";
-            return dbGets("select * from product where title like '%$search%' or description like '%$search%' $cat order by post_date ");
+			$sql="and id_ville=$id_ville";
+			if($id_ville==-1)$sql="";
+            return dbGets("select * from product where title like '%$search%' or description like '%$search%' $cat $sql order by post_date limit $index , $total ");
         }
-        
-        static function loadProductsByNearMe( $long , $lat ){
+        static function loadProductsByFeed($id_ville ,$index,$total){
+            $sql="and id_ville=$id_ville";
+			if($id_ville==-1)$sql="";
+    	return dbGets("select * , count(comment) as feed from products as p , swap_comment as c where c.type='comment' and p.id=c.id_swap $sql group by p.id order by feed limit $index , $total ");
+    }
+        static function loadProductsByNearMe( $long , $lat ,$index,$total,$id_category=0){
+			$cat="";
+           if($id_category!=0)
+           $cat=" where id_category=$id_category ";
         $query="
             set @lat=$lat;
             set @lng=$long;
-            SELECT *, 111.045 * DEGREES(ACOS(COS(RADIANS(@lat)) * COS(RADIANS(latitude)) *         COS(RADIANS(longtitude) - RADIANS(@lng)) + SIN(RADIANS(@lat)) * SIN(RADIANS(latitude)))) AS distance_in_km FROM product ORDER BY distance_in_km 
-            ";
+            SELECT *, 111.045 * DEGREES(ACOS(COS(RADIANS(@lat)) * COS(RADIANS(latitude)) *         COS(RADIANS(longtitude) - RADIANS(@lng)) + SIN(RADIANS(@lat)) * SIN(RADIANS(latitude)))) AS distance_in_km FROM product $cat ORDER BY distance_in_km  limit $index , $total ";
+            
             return dbGets( $query );
         }
         
