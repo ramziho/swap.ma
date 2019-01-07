@@ -1,4 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-.astylers.com	TRUE	/	FALSE	1999999999	__cfduid	d2ee2c1a11a768565f6cc04e92ea9b3fc1546861737
-
