@@ -1,4 +1,4 @@
-checkDictExis();<?php
+<?php
   
 class Product{
   
@@ -192,11 +192,5 @@ class Product{
              
              
 }
-  
-  
-  
-  
-
-  
-  
+ 
   ?>
