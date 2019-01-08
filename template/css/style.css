@@ -167,6 +167,12 @@ a.link-color:hover{
 .navbar .content-right .sidebarSearch{
     margin-right:14px
 }
+
+#slide-out-right{
+	height: 100vh;
+    overflow: scroll;
+}
+
 .navbar .content-right .sidebarCart i,.navbar .content-right .sidebarSearch i{
     position:relative;
     left:8px
