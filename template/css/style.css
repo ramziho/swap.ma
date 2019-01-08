@@ -309,6 +309,13 @@ a.link-color:hover{
     color:#aaa;
     font-size:14px
 }
+.sidebarSearch h5.patchTop{
+	margin-top: 30px;
+    top: 10px;
+    position: relative;
+    margin-bottom: 4px;
+}
+
 .sidebarCart .collapsible{
     padding:15px
 }
