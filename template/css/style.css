@@ -170,7 +170,7 @@ a.link-color:hover{
 
 #slide-out-right{
 	height: 100vh;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .navbar .content-right .sidebarCart i,.navbar .content-right .sidebarSearch i{
