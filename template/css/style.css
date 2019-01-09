@@ -860,7 +860,8 @@ a.link-color:hover{
 }
 .product-details .desc-short h5{
     color:#e82954;
-    margin-bottom:10px
+    margin-bottom:10px;
+	font-size: 13px;
 }
 .product-details .desc-long{
     border-top:1px solid #ddd;
