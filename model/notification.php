@@ -1,6 +1,7 @@
 <?php
 
    class notification{
+    
   		//  check your swaps or your comments in swaps
   		static function addProductSwapNotification( $productId ){
           return dbPost("INSERT INTO `notification` (`id`, `user_id`, `type`, `id_target`, `status`, `notification_date`) VALUES (NULL,".dbGet("select id_user from product where id=$productId").", 'swapRequest', $productId, 'active', now());");

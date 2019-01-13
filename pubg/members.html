@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html >
+
+	<head>
+		<title> PUBG Mobile Battle Royal</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet/less" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+		<script  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js" ></script>
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+		  <ul style="z-index: 1001;" id="slide-out" class="sidenav">
+		  	<li style="margin-top: 70px;">
+		    		<a href="#" > ﺔﺍﻟﺒﻄﻮﻟﺔ  </a>
+					<a href="#" class="selected" > ﻞﺗﺴﺠﻴﻞ   </a>
+					<a href="#"> ﻦ ﻗﻮﺍﻧﻴﻦ  </a>
+					<a href="#"> ﻦﻻﺋﺤﺔ ﺍﻟﻤﺸﺘﺮﻛﻴﻦ  </a>
+			</li>
+		  </ul>
+
+		  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="bars icon menuMobile"></i></a>
+
+		  <script type="text/javascript">
+
+		  	body = document.querySelector("body"); oneTime = true;
+		  	body.onclick = function(){
+		  		if( ! oneTime ) return;
+		  		body.requestFullscreen();
+		  		oneTime = false;
+		  	}
+		  	$(document).ready(function(){
+			    $('.sidenav').sidenav({
+			    	edge:'right'
+			    })
+			  });
+		  	
+		  </script>
+
+		<div class="flex-content">
+			<div class="rightMenu">  
+				<div class="container">
+					<a href="#" > ﺔﺍﻟﺒﻄﻮﻟﺔ  </a>
+					<a href="#" class="selected"> ﻞﺗﺴﺠﻴﻞ   </a>
+					<a href="#"> ﻦ ﻗﻮﺍﻧﻴﻦ  </a>
+					<a href="#"> ﻦﻻﺋﺤﺔ ﺍﻟﻤﺸﺘﺮﻛﻴﻦ  </a>
+				</div>
+			</div>
+	
+			<div class="contentPage" >
+				<div class="container">
+					<div class="pubg-char"></div>
+					<div class="main-content">
+						<img src="img/265248096015212.png" style="max-width: 100%; width: 450px;">
+						
+						
+						<div class="box">
+
+						<div class="ui statistic statisticStyle">
+						  <div class="value">
+						    7
+						  </div>
+						  <div class="label">
+						     مشترك من جميع الدول العربية
+						  </div>
+						</div>	
+						<i class="check icon circle yellowBtn"></i>  ت! سجل في أكبر تحدي بيبجي موبايل عربي، تسجل وحيد أو مع فريق. أبرز قدراتك ومهاراتك، جائزة  لآخر فريق يبقى على قيد الحياة 
+
+
+						<div class="users">
+							<div class="group">
+
+								<div class="classement"> 1 </div>
+
+								<div class="containerData">
+
+									<h1>فريق زمردة</h1>
+									<div class="chip"> Jane Doe  </div>
+									<div class="chip"> Jane Doe  </div>
+									<div class="chip"> Jane Doe  </div>
+									<div class="chip"> Jane Doe  </div>
+
+								</div>
+
+							</div>
+							<div class="group">
+
+								<div class="classement"> 2 </div>
+
+								<div class="containerData">
+
+									<h1>Ayoub</h1>
+									<div class="chip"> Jane Doe  </div>
+									<div class="chip"> Jane Doe  </div>
+									<div class="chip"> Jane Doe  </div>
+									<div class="chip"> Jane Doe  </div>
+
+								</div>
+
+							</div>
+							<div class="group">
+
+								<div class="classement"> 3 </div>
+
+								<div class="containerData">
+
+									<h1>Ayoub</h1>
+									<div class="chip"> Jane Doe  </div>
+									<div class="chip"> Jane Doe  </div>
+									<div class="chip"> Jane Doe  </div>
+									<div class="chip"> Jane Doe  </div>
+
+								</div>
+
+							</div>
+						</div>
+
+							<div class="ui vertical animated button btnCallToAction pulse" tabindex="0">
+							  <div class="visible content"> تسجل الآن  </div>
+							  <div class="hidden content">
+								<i class="left arrow icon" style="float:none !important;"></i>
+							    $واربح 100
+							  </div>
+							</div>
+
+					</div>
+				</div>
+			</div>
+	
+		</div>
+
+
+	</body>
+
+</html>
